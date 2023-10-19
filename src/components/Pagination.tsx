@@ -1,21 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+
 import { useAppContext } from "../AppContext";
 
-interface PaginationProps {
-    totalItems: number;
-    itemsPerPage: number;
-}
 
-const Pagination: React.FC<PaginationProps> = ({
-    totalItems,
-    itemsPerPage,
-}) => {
-    const { pageNumber = "1" } = useParams<{ pageNumber: string }>();
-    const currentPage = parseInt(pageNumber, 10) || 1;
 
+const Pagination: React.FC = () => {
+    const {currentPage, totalItems, itemsPerPage, setCurrentPage} = useAppContext()
+    const { pageNumber = "1"} = useParams<{ pageNumber: string }>();
     const totalPages = Math.ceil(totalItems / itemsPerPage);
-
+    
     const generatePageNumbers = () => {
         const pages = [];
         for (let i = 1; i <= totalPages; i++) {
@@ -33,7 +27,9 @@ const Pagination: React.FC<PaginationProps> = ({
         return pages;
     };
 
-    console.log(generatePageNumbers())
+    useEffect(() =>{
+        setCurrentPage(parseInt(pageNumber))
+    }, [pageNumber])
     return (
         <nav aria-label="Page navigation example">
             <ul className="pagination">
@@ -61,4 +57,4 @@ const Pagination: React.FC<PaginationProps> = ({
     );
 };
 
-export default Pagination;
+export default React.memo(Pagination);

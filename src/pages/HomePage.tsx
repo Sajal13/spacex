@@ -1,17 +1,16 @@
-import React from "react";
+import React, {useMemo} from "react";
 import Cards from "../components/Cards";
-import Search from "../components/Search";
+import Filter from "../components/Filter";
 import Pagination from "../components/Pagination";
-import { useAppContext } from "../AppContext";
+import Header from "../components/Header";
 
 const HomePage: React.FC = () => {
-    const {totalItems, itemsPerPage} = useAppContext()
-    console.log(totalItems)
     return (
         <>
-            <Search />
+            <Header />
+            <Filter />
             <Cards />
-            <Pagination totalItems={totalItems} itemsPerPage={itemsPerPage} />
+            <Pagination  />
         </>
     );
 };
