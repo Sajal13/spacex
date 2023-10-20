@@ -10,7 +10,7 @@ const App: React.FC = () => {
         <div className="container mt-5">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/page/:pageNumber" element={<HomePage />} />
+            <Route path="/:pageNumber" element={<HomePage />} />
           </Routes>
         </div>
       </Router>

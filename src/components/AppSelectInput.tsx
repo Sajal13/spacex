@@ -21,6 +21,7 @@ const AppSelectInput = ({
             <select
                 name="selectBox"
                 id="selectBox"
+                className="form-select"
                 value={selectedValue}
                 onChange={handleSelectItemChange}
             >
