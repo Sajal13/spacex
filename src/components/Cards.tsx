@@ -30,8 +30,6 @@ const Cards: React.FC = () => {
                 setError(error.message);
                 setLoading(false);
             });
-            
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [setTotalItems]);
 
     useEffect(() => {
@@ -88,7 +86,7 @@ const Cards: React.FC = () => {
         });
         setFilteredData(filtered);
         setTotalItems(filtered.length);
-    }, [searchQuery, data, launchStatus, launchDate, isChecked]);
+    }, [searchQuery, data, launchStatus, launchDate, isChecked,setTotalItems]);
 
     const genrateDate = (launch_date_ute: any) => {
         const launchDate = new Date(launch_date_ute);
