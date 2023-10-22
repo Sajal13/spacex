@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { useAppContext } from "../AppContext";
 import AppSelectInput from "./AppSelectInput";
