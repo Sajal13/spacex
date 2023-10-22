@@ -2,10 +2,13 @@ $text-gray-900 : #212529;
 $text-gray-800 : #343A40;
 $text-gray-700: #495057;
 $text-gray-600: #495057;
+$gray-400: #CED4DA;
 $body-text-body-color: #212529;
+$gray-white: #FFF;
 
-.custom-heading{
+.custom-heading {
     margin-bottom: 4rem;
+
     .custom-muted-text {
         color: $text-gray-700;
         line-height: 150%;
@@ -14,9 +17,12 @@ $body-text-body-color: #212529;
 
 .custom-card {
     padding: 32px;
+    border-radius: 8px;
+    border: 1px solid $gray-400;
+    background: $gray-white;
 
     .custom-card-header {
-        background: white;
+        background: $gray-white;
         border-bottom: none;
         margin-bottom: 2.5rem;
     }
@@ -30,26 +36,32 @@ $body-text-body-color: #212529;
         color: $text-gray-600;
         line-height: 150%;
     }
-    .custom-text{
+
+    .custom-text {
         color: $text-gray-800;
     }
-    .fs-7{
+
+    .fs-7 {
         color: $text-gray-700;
         font-size: 14px;
     }
+
     .custom-card-footer {
-        background: white;
+        background: $gray-white;
         border-top: none;
     }
-    .custom-footer-text{
+
+    .custom-footer-text {
         color: $text-gray-600;
         font-weight: 500;
         line-height: 120%;
     }
 }
-.custom-row{
+
+.custom-row {
     min-height: 40vh;
 }
-.custom-footer{
+
+.custom-footer {
     padding: 80.4px 0 24px;
 }
