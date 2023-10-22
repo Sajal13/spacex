@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "^18.2.31"
+    "@types/react": "^18.2.31",
+    "sass": "^1.69.4"
   }
 }

@@ -1,0 +1,55 @@
+$text-gray-900 : #212529;
+$text-gray-800 : #343A40;
+$text-gray-700: #495057;
+$text-gray-600: #495057;
+$body-text-body-color: #212529;
+
+.custom-heading{
+    margin-bottom: 4rem;
+    .custom-muted-text {
+        color: $text-gray-700;
+        line-height: 150%;
+    }
+}
+
+.custom-card {
+    padding: 32px;
+
+    .custom-card-header {
+        background: white;
+        border-bottom: none;
+        margin-bottom: 2.5rem;
+    }
+
+    .custom-card-image-top {
+        width: 7.75rem;
+        height: 7.75rem;
+    }
+
+    .custom-card-text {
+        color: $text-gray-600;
+        line-height: 150%;
+    }
+    .custom-text{
+        color: $text-gray-800;
+    }
+    .fs-7{
+        color: $text-gray-700;
+        font-size: 14px;
+    }
+    .custom-card-footer {
+        background: white;
+        border-top: none;
+    }
+    .custom-footer-text{
+        color: $text-gray-600;
+        font-weight: 500;
+        line-height: 120%;
+    }
+}
+.custom-row{
+    min-height: 40vh;
+}
+.custom-footer{
+    padding: 80.4px 0 24px;
+}
