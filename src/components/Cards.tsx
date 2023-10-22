@@ -32,7 +32,7 @@ const Cards: React.FC = () => {
             });
             
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [setTotalItems]);
 
     useEffect(() => {
         let isSuccess: any;
