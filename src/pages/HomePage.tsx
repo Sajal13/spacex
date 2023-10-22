@@ -1,4 +1,4 @@
-import React, {useMemo} from "react";
+import React from "react";
 import Cards from "../components/Cards";
 import Filter from "../components/Filter";
 import Pagination from "../components/Pagination";
