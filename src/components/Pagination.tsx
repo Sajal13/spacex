@@ -67,6 +67,7 @@ const Pagination: React.FC = () => {
 
     useEffect(() => {
         setCurrentPage(parseInt(pageNumber));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pageNumber]);
     return (
         <nav aria-label="Page navigation example">

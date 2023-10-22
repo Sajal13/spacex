@@ -30,6 +30,7 @@ const Cards: React.FC = () => {
                 setError(error.message);
                 setLoading(false);
             });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -43,7 +44,6 @@ const Cards: React.FC = () => {
         }
 
         const filtered = data.filter((item) => {
-            const date = new Date(item.launch_date_utc);
             const lastWeek = new Date();
             lastWeek.setDate(lastWeek.getDate() - 7);
             const lastMonth = new Date();
