@@ -3,6 +3,7 @@ import Cards from "../components/Cards";
 import Filter from "../components/Filter";
 import Pagination from "../components/Pagination";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const HomePage: React.FC = () => {
     return (
@@ -11,6 +12,7 @@ const HomePage: React.FC = () => {
             <Filter />
             <Cards />
             <Pagination  />
+            <Footer />
         </>
     );
 };

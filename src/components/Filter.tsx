@@ -30,9 +30,9 @@ const Filter: React.FC = () => {
         setLaunchDate(e.target.value);
     };
     return (
-        <div className="row mb-3">
-            <div className="col-3">
-                <div className="input-group">
+        <div className="row">
+            <div className="col-12 col-md-6 col-lg-3 mb-4 mb-lg-5 d-flex align-items-center mt-md-4 mt-lg-0 ">
+                <div className="input-group ">
                     <input
                         type="text"
                         className="form-control"
@@ -47,13 +47,13 @@ const Filter: React.FC = () => {
                     </span>
                 </div>
             </div>
-            <div className="col-9 text-end">
-                <div className="">
+            <div className="col-12 col-md-6 col-lg-9  mb-4 mb-lg-5 text-md-end">
+                <div className="mb-3">
                     <input
                         type="checkbox"
                         name="upcomint"
                         id="upcoming"
-                        className="form-check-input"
+                        className="form-check-input me-2"
                         checked={isChecked}
                         onChange={handleCheckChange}
                     />
@@ -61,8 +61,8 @@ const Filter: React.FC = () => {
                         Show upcoming only
                     </label>
                 </div>
-                <div className="d-flex justify-content-end">
-                    <div>
+                <div className="d-md-flex justify-content-md-end mb-5 mb-md-0">
+                    <div className="mb-3 mb-lg-5 me-md-4">
                         <div>
                             <AppSelectInput
                                 options={launchStatusOptions}

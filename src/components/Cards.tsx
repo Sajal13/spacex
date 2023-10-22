@@ -61,23 +61,27 @@ const Cards: React.FC = () => {
             if (isSuccess === false) {
                 matchesSearch = matchesSearch && item.launch_success === false;
             }
-            if (launchDate == "2" && lastWeek <= date) {
+            if (launchDate === "2") {
                 matchesSearch =
                     matchesSearch &&
                     item.launch_date_utc >= new Date(lastWeek).toISOString();
             }
-            if (launchDate === "3" && lastMonth <= date) {
+            if (launchDate === "3") {
                 matchesSearch =
                     matchesSearch &&
                     item.launch_date_utc >= new Date(lastMonth).toISOString();
             }
-            if (launchDate === "4" && lastYear <= date) {
+            if (launchDate === "4") {
+                const newDate = new Date();
+                const currenYear: any = newDate.getUTCFullYear().toString();
+                const lastYearFromCurrentYear = currenYear - 1;
+                console.log(lastYearFromCurrentYear);
                 matchesSearch =
                     matchesSearch &&
-                    item.launch_date_utc >= new Date(lastMonth).toISOString();
+                    item.launch_year === lastYearFromCurrentYear;
             }
             if (isChecked === true) {
-                matchesSearch = matchesSearch && item.upcoming == true;
+                matchesSearch = matchesSearch && item.upcoming === true;
             }
             return matchesSearch;
         });
@@ -121,46 +125,60 @@ const Cards: React.FC = () => {
     const rocketItems = filteredData.slice(indexOfFirstPost, index0fLastPost);
 
     return (
-        <div className="row g-4">
-            {rocketItems.map((item,index) => (
-                <div key={index} className="col-12 col-md-6 col-lg-4">
-                    <div className="card text-center">
-                        <div className="card-header">
-                            <img
-                                src={item.links.mission_patch}
-                                alt=""
-                                className="card-img-top"
-                            />
-                        </div>
-                        <div className="card-body">
-                            <p className="card-text">
-                                Launch Date: {genrateDate(item.launch_date_utc)}
-                            </p>
-                            <h4 className="card-title h4">
-                                {item.mission_name}
-                            </h4>
-                            <p className="card-text">
-                                {item.rocket.rocket_name}
-                            </p>
-                        </div>
-                        <div className="card-footer">
-                            <p className="card-text">Launch Status:</p>
-                            <a
-                                href="#"
-                                className={`btn ${
-                                    item.launch_success === true
-                                        ? "btn-success"
-                                        : "btn-danger"
-                                }`}
-                            >
-                                {item.launch_success === true
-                                    ? "Success"
-                                    : "Failed"}
-                            </a>
+        <div className="row g-4 mb-5">
+            {rocketItems &&
+                rocketItems.map((item, index) => (
+                    <div key={index} className="col-12 col-md-6 col-lg-4">
+                        <div className="card text-center custom-card">
+                            <div className="card-header custom-card-header">
+                                <img
+                                    src={item.links.mission_patch}
+                                    alt=""
+                                    className="card-img-top custom-card-image-top"
+                                />
+                            </div>
+                            <div className="card-body">
+                                <p className="card-text custom-card-text fs-6 mb-2">
+                                    Launch Date:{" "}
+                                    <span className="custom-text">
+                                        {genrateDate(item.launch_date_utc)}
+                                    </span>
+                                </p>
+                                <h4 className="card-title h4">
+                                    {item.mission_name}
+                                </h4>
+                                <p className="card-text fs-7">
+                                    {item.rocket.rocket_name}
+                                </p>
+                            </div>
+                            <div className="card-footer custom-card-footer">
+                                <p className="custom-footer-text">
+                                    Launch Status:
+                                </p>
+                                <button
+                                    className={`btn ${
+                                        item.launch_success === true
+                                            ? "btn-success"
+                                            : "btn-danger"
+                                    }`}
+                                >
+                                    {item.launch_success === true
+                                        ? "Success"
+                                        : "Failed"}
+                                </button>
+                            </div>
                         </div>
                     </div>
+                ))}
+            {rocketItems.length === 0 && (
+                <div className="row custom-row">
+                    <div className="col-12 text-center">
+                        <p className="text-warning fs-4 fw-semibold">
+                            No Rocket Data to Show
+                        </p>
+                    </div>
                 </div>
-            ))}
+            )}
         </div>
     );
 };
