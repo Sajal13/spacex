@@ -84,7 +84,7 @@ const Pagination: React.FC = () => {
                     </li>
                 )}
                 {generatePageNumbers()}
-                {currentPage < 13 && totalItems > 1 && (
+                {currentPage < 13 && totalItems > 2 && (
                     <li className="page-item">
                         <Link
                             to={`/${currentPage + 1}`}
