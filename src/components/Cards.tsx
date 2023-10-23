@@ -74,7 +74,6 @@ const Cards: React.FC = () => {
                 const newDate = new Date();
                 const currenYear: any = newDate.getUTCFullYear().toString();
                 const lastYearFromCurrentYear = currenYear - 1;
-                console.log(lastYearFromCurrentYear);
                 matchesSearch =
                     matchesSearch &&
                     item.launch_year === lastYearFromCurrentYear;
