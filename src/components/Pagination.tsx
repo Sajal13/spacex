@@ -72,7 +72,7 @@ const Pagination: React.FC = () => {
     return (
         <nav aria-label="Page navigation example">
             <ul className="pagination d-flex justify-content-center">
-                {currentPage > 1 && (
+                {currentPage > 1 && totalItems > 1 && (
                     <li className="page-item">
                         <Link
                             to={`/${currentPage - 1}`}
