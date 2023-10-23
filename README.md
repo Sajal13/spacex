@@ -1,6 +1,6 @@
 # Dependecy of the project.
-[InstalledDependency.md](InstalledDependency)
+[InstalledDependency](InstalledDependency.md)
 
 # Run the app
 
-[App.md](App)
+[App](App.md)
