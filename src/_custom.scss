@@ -5,7 +5,10 @@ $text-gray-600: #495057;
 $gray-400: #CED4DA;
 $body-text-body-color: #212529;
 $gray-white: #FFF;
-
+$font-family: 'Barlow', sans-serif;
+body{
+    font-family: $font-family;
+}
 .custom-heading {
     margin-bottom: 4rem;
 
